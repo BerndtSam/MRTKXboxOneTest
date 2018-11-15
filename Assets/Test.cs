@@ -25,5 +25,11 @@ public class Test : XboxControllerHandlerBase
         float z = eventData.XboxLeftStickVerticalAxis;
 
         gameObject.transform.position = initialPosition + new Vector3(x, y, z);
+
+        float roll = eventData.XboxRightStickHorizontalAxis;
+        float pitch = eventData.XboxRightStickVerticalAxis;
+        float yaw = eventData.XboxDpadHorizontalAxis;
+
+        gameObject.transform.rotation *= Quaternion.Euler(roll, pitch, yaw);
     }
 }
