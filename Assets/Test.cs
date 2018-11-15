@@ -31,5 +31,8 @@ public class Test : XboxControllerHandlerBase
         float yaw = eventData.XboxDpadHorizontalAxis;
 
         gameObject.transform.rotation *= Quaternion.Euler(roll, pitch, yaw);
+
+        float scale = eventData.XboxDpadHorizontalAxis;
+        gameObject.transform.localScale += new Vector3(scale,scale,scale);
     }
 }
